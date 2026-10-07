@@ -30,6 +30,10 @@ if (-not $pwsh) {
 
     & winget install --id Microsoft.PowerShell --exact --source winget --accept-package-agreements --accept-source-agreements
 
+    if ($LASTEXITCODE -ne 0) {
+        throw "winget 安装 PowerShell 7 失败，退出码: $LASTEXITCODE"
+    }
+
     $pwsh = Find-Pwsh
 
     if (-not $pwsh) {
