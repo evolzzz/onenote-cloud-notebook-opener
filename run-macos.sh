@@ -15,7 +15,7 @@ if ! command -v pwsh >/dev/null 2>&1; then
   brew install powershell
 fi
 
-TMP_SCRIPT="$(mktemp -t open-all-onenote.XXXXXX.ps1)"
+TMP_SCRIPT="$(mktemp -t open-all-onenote)"
 trap 'rm -f "$TMP_SCRIPT"' EXIT
 
 echo "正在下载最新版 OneNote 脚本..."
